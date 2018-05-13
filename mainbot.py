@@ -18,7 +18,7 @@ def handle_command(slack_api, command, channel):
 	elif command.lower().startswith('hi') or command.lower().startswith('hey') or command.lower().startswith('hello') or command.lower().startswith('who are you'):
 		slack_api.rtm_send_message(channel, 'Hey, I\'m your slack bot, how may I help you?')
 	else:
-		print 'Invalid Command: Not Understood'
+		print ('Invalid Command: Not Understood')
 		slack_api.rtm_send_message(channel, 'Invalid Command: Not Understood')
 	
 def main():
@@ -35,7 +35,7 @@ def main():
 				handle_command(slack_api, command, channel)
 			time.sleep(READ_WEBSOCKET_DELAY)
 	else:
-		print 'Connection failed. Invalid Slack token or bot ID?' 
+		print ('Connection failed. Invalid Slack token or bot ID?') 
 
 if __name__ == '__main__':
 	main()
